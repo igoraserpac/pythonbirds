@@ -96,18 +96,42 @@ A direção terá a responsabilidade de controlar a direção. Ela oferece os se
 class Motor:
 
     def __init__(self, velocidade=0):
-        self.velocidae = velocidade
+        self.velocidade = velocidade
 
     def acelerar(self):
-        Motor.velocidade = Motor.velocidade + 1
-        return Motor.velocidade
+        self.velocidade = self.velocidade + 1
 
     def frear(self):
-        Motor.velocidade = Motor.velocidade - 2
-        if Motor.velocidade <= 0:
-            Motor.velocidade = 0
-        return Motor.velocidade
+        self.velocidade = self.velocidade - 2
+        if self.velocidade <= 0:
+            self.velocidade = 0
+
+    def calcular_velocidade(self):
+        return self.velocidade
+
 
 class Direcao:
+    dicionario = {0: 'Norte', 1: 'Leste', 2: 'Sul', 3: 'Oeste'}
 
-    def __int__(self):
+    def __int__(self, rumo=0):
+        self.rumo = rumo
+
+    def virar_a_direita(self):
+        self.rumo += 1
+
+    def virar_a_esquerda(self):
+        self.rumo -= 1
+
+    def calcular_direcao(self):
+        return self.dicionario[self.rumo % 4]
+
+
+class Carro:
+    def __init__(self, motor, direcao):
+        self.motor = motor
+        self.direcao = direcao
+
+
+if __name__ == '__main__':
+    Motor.acelerar()
+    print(Motor.calcular_velocidade())
