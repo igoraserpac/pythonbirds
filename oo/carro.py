@@ -106,12 +106,33 @@ class Motor:
         if self.velocidade <= 0:
             self.velocidade = 0
 
-    def calcular_velocidade(self):
-        return self.velocidade
+
+motor = Motor()
+motor.acelerar()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
+motor.frear()
+print(motor.velocidade)
+motor.frear()
+print(motor.velocidade)
+motor.frear()
+print(motor.velocidade)
+motor.frear()
+print(motor.velocidade)
+motor.frear()
+print(motor.velocidade)
 
 
 class Direcao:
-    dicionario = {0: 'Norte', 1: 'Leste', 2: 'Sul', 3: 'Oeste'}
 
     def __int__(self, rumo=0):
         self.rumo = rumo
@@ -122,10 +143,32 @@ class Direcao:
     def virar_a_esquerda(self):
         self.rumo -= 1
 
-    def calcular_direcao(self):
-        return self.dicionario[self.rumo % 4]
 
+direcao = Direcao()
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_direita()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
 
+"""
 class Carro:
     def __init__(self, motor, direcao):
         self.motor = motor
@@ -135,3 +178,5 @@ class Carro:
 if __name__ == '__main__':
     Motor.acelerar()
     print(Motor.calcular_velocidade())
+    
+"""
