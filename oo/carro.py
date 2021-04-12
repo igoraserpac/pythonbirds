@@ -107,6 +107,8 @@ class Motor:
             self.velocidade = 0
 
 
+"""
+# Testando motor (Funcionou)
 motor = Motor()
 motor.acelerar()
 print(motor.velocidade)
@@ -130,20 +132,24 @@ motor.frear()
 print(motor.velocidade)
 motor.frear()
 print(motor.velocidade)
+"""
 
 
 class Direcao:
 
-    def __int__(self, rumo=0):
+    def __init__(self, rumo=0):
         self.rumo = rumo
 
     def virar_a_direita(self):
-        self.rumo += 1
+        self.rumo = self.rumo + 1
 
     def virar_a_esquerda(self):
-        self.rumo -= 1
+        self.rumo = self.rumo - 1
 
 
+"""
+# Testando direção (Funcionou)
+lista = ['Norte', 'Leste', 'Sul', 'Oeste']
 direcao = Direcao()
 direcao.virar_a_direita()
 print(direcao.rumo)
@@ -167,16 +173,84 @@ direcao.virar_a_esquerda()
 print(direcao.rumo)
 direcao.virar_a_esquerda()
 print(direcao.rumo)
-
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
+direcao.virar_a_esquerda()
+print(direcao.rumo)
 """
+
+
 class Carro:
-    def __init__(self, motor, direcao):
+
+    def __init__(self, motor=Motor(), direcao=Direcao()):
         self.motor = motor
         self.direcao = direcao
 
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def virar_a_direita(self):
+        self.direcao.virar_a_direita()
+
+    def virar_a_esquerda(self):
+        self.direcao.virar_a_esquerda()
+
+    def calcular_velocidade(self):
+        print(self.motor.velocidade)
+
+    def calcular_direção(self):
+        lista = ['Norte', 'Leste', 'Sul', 'Oeste']
+        var = lista[self.direcao.rumo % -4]
+        print(var)
+
 
 if __name__ == '__main__':
-    Motor.acelerar()
-    print(Motor.calcular_velocidade())
-    
-"""
+    # Testando Carro
+    gol = Carro()
+    gol.acelerar()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.acelerar()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.acelerar()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.acelerar()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.frear()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.acelerar()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.virar_a_direita()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.virar_a_direita()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.virar_a_direita()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
+    gol.virar_a_esquerda()
+    gol.calcular_velocidade()
+    gol.calcular_direção()
